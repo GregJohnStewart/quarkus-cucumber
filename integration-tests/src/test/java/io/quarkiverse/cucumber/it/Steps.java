@@ -2,8 +2,6 @@ package io.quarkiverse.cucumber.it;
 
 import static io.restassured.RestAssured.given;
 
-import jakarta.inject.Inject;
-
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import io.cucumber.java.en.Given;
@@ -11,8 +9,6 @@ import io.cucumber.java.en.Then;
 import io.restassured.response.ValidatableResponse;
 
 public class Steps {
-
-    @Inject
     @ConfigProperty(name = "testPath", defaultValue = "/")
     String target;
 

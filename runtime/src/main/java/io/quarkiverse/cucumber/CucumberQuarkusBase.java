@@ -1,5 +1,19 @@
 package io.quarkiverse.cucumber;
 
+import java.net.URI;
+import java.time.Clock;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+import jakarta.enterprise.inject.Instance;
+import jakarta.enterprise.inject.spi.CDI;
+
+import org.junit.jupiter.api.*;
+import org.junit.platform.console.ConsoleLauncher;
+
 import io.cucumber.core.backend.ObjectFactory;
 import io.cucumber.core.eventbus.EventBus;
 import io.cucumber.core.feature.FeatureParser;
@@ -14,18 +28,6 @@ import io.cucumber.core.runner.Runner;
 import io.cucumber.core.runtime.*;
 import io.cucumber.java.JavaBackendProviderService;
 import io.cucumber.plugin.event.*;
-import jakarta.enterprise.inject.Instance;
-import jakarta.enterprise.inject.spi.CDI;
-import org.junit.jupiter.api.*;
-import org.junit.platform.console.ConsoleLauncher;
-
-import java.net.URI;
-import java.time.Clock;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Predicate;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public abstract class CucumberQuarkusBase {
 
@@ -122,8 +124,8 @@ public abstract class CucumberQuarkusBase {
                                 Assertions.fail(
                                         "failed in " + f.getUri() + " at line "
                                                 + ((PickleStepTestStep) testStep).getStep()
-                                                .getLocation()
-                                                .getLine(),
+                                                        .getLocation()
+                                                        .getLine(),
                                         resultAtomicReference.get().getResult().getError());
                             } else {
                                 // failed somewhere in hooks
