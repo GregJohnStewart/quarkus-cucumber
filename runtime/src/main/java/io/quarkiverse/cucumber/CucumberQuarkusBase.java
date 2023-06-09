@@ -179,7 +179,7 @@ public abstract class CucumberQuarkusBase {
         }
     }
 
-    protected static <T extends CucumberQuarkusTest> void runMain(Class<T> testClass, String[] args) {
+    protected static <T extends CucumberQuarkusBase> void runMain(Class<T> testClass, String[] args) {
         RuntimeOptions propertiesFileOptions = new CucumberPropertiesParser()
                 .parse(CucumberProperties.fromPropertiesFile())
                 .build();
