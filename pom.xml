@@ -72,7 +72,7 @@
         </property>
       </activation>
       <modules>
-        <module>integration-tests</module>
+        <module>integration-tests-maven</module>
       </modules>
     </profile>
   </profiles>

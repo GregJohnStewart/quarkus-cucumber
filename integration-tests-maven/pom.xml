@@ -6,8 +6,8 @@
         <artifactId>quarkus-cucumber-parent</artifactId>
         <version>999-SNAPSHOT</version>
     </parent>
-    <artifactId>quarkus-cucumber-integration-tests</artifactId>
-    <name>Quarkus - Cucumber - Integration Tests</name>
+    <artifactId>quarkus-cucumber-integration-tests-maven</artifactId>
+    <name>Quarkus - Cucumber - Integration Tests - Maven</name>
     <dependencies>
         <dependency>
             <groupId>io.quarkus</groupId>
